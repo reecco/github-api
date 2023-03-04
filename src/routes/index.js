@@ -13,7 +13,7 @@ export default (app) => {
     res.status(status).json({ data, status });
   });
 
-  app.get('/user/commit/:user', async (req, res) => {
+  app.get('/user/:user/commit', async (req, res) => {
     const { user } = req.params;
 
     const result = await getCommit(user).then(res => res).catch(error => error);
